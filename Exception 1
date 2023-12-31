@@ -1,32 +1,28 @@
 import java.util.Scanner;  
   
   
-class InvalidAgeException  extends Exception    
+class AgeException  extends Exception    
 {    
     
-    public InvalidAgeException (String message)    
+    public AgeException (String message)    
     {    
           
         super(message);    
     }    
 }    
   
-public class CustomExceptionExample1    
-{    
-  
-   
-    static void checkEligibility (int age) throws InvalidAgeException  
+public class Test
+{  
+    static void check (int age) throws AgeException  
     {      
          
         if(age < 18){    
             
-            throw new InvalidAgeException("You are not eligible for the exam.");   
+            throw new AgeException("Vote halna kina aako.");   
         }else {     
-            System.out.println("You are eligible for the exam.");     
+            System.out.println("malae vote dinae parne hunxa.");     
         }        
     }      
-  
-   
     public static void main(String args[])    
     {    
         
@@ -35,7 +31,7 @@ public class CustomExceptionExample1
         int age;  
               
           
-        System.out.println("Please enter your age:");  
+        System.out.printl("your age:");  
         age = scan.nextInt();  
           
         scan.close();  
@@ -43,13 +39,12 @@ public class CustomExceptionExample1
         try    
         {    
           
-            checkEligibility(age);    
+            check(age);    
         }    
-        catch (InvalidAgeException exception)    
-        {    
-            System.out.println("We found an excaption:");    
+        catch (AgeException e)    
+        { 
        
-            System.out.println(exception);  
+            System.out.println(e);  
               
         }         
     }       
